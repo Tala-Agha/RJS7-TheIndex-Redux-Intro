@@ -1,4 +1,6 @@
 import React from "react";
+import { addAuthor } from "./redux/actionCreators";
+import { connect } from "react-redux";
 
 const Sidebar = props => {
   return (
@@ -11,7 +13,7 @@ const Sidebar = props => {
         <button
           id="add-button"
           className="btn btn-block btn-light"
-          onClick={props.addAuthorHandler}
+          onClick={props.addAuthor}
         >
           + ADD AUTHOR
         </button>
@@ -20,4 +22,10 @@ const Sidebar = props => {
   );
 };
 
-export default Sidebar;
+const mapStateToProps = dispatch => {
+  return {
+    addAuthor: () => dispatch(addAuthor())
+  };
+};
+
+export default connect(null, mapStateToProps)(Sidebar);
