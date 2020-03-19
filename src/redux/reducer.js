@@ -7,7 +7,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case "ADD AUTHOR":
+    case "ADD_AUTHOR":
       const newAuthor = {
         id: state.newAuthorId,
         first_name: "Author",
@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
         authors: state.authors.concat([newAuthor]),
         newAuthorId: state.newAuthorId + 1
       };
-    case "DELETE AUTHOR":
+    case "DELETE_AUTHOR":
       return {
         ...state,
         authors: state.authors.filter(author => author.id !== action.payload.id)

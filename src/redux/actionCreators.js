@@ -1,12 +1,12 @@
 export const addAuthor = () => {
   return {
-    type: "ADD AUTHOR"
+    type: "ADD_AUTHOR"
   };
 };
 
 export const deleteAuthor = author => {
   return {
-    type: "DELETE AUTHOR",
+    type: "DELETE_AUTHOR",
     payload: author
   };
 };
